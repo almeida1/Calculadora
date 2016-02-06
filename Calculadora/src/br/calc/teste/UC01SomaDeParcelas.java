@@ -18,10 +18,18 @@ public class UC01SomaDeParcelas {
 	}
 	@Test
 	public void CT01UC01SomaDeParcelas_com_sucesso() {
-		assertEquals("resultado =",5,calculadora.soma(3,2),0);
+		assertEquals("resultado =",5,calculadora.soma("3,2"),0);
 	}
+	@Test(expected = RuntimeException.class)
+	public void CT02UC01SomaDeParcelas_dados_invalidos(){
+		assertEquals("resultado = ",5,calculadora.soma("x, 2"));
+	}
+	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
 }
+
+
+
 
